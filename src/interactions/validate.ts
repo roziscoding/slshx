@@ -21,12 +21,12 @@ export async function validateInteraction(
     "raw",
     publicKeyData,
     // @ts-expect-error Node.js needs to know this is a public key
-    { name: "NODE-ED25519", namedCurve: "NODE-ED25519", public: true },
+    { name: "ED25519", namedCurve: "ED25519", public: true },
     true,
     ["verify"]
   );
   const valid = await crypto.subtle.verify(
-    "NODE-ED25519",
+    "ED25519",
     publicKey,
     signature,
     ENCODER.encode(timestamp + body)
