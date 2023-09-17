@@ -29,7 +29,7 @@ export const encoder = new TextEncoder();
 // @ts-expect-error crypto doesn't have correct WebCrypto types, so pretend
 //  it's Workers crypto.
 const crypto = webcrypto as Crypto;
-export const algorithm = { name: "NODE-ED25519", namedCurve: "NODE-ED25519" };
+export const algorithm = { name: "ED25519", namedCurve: "ED25519" };
 // noinspection JSVoidFunctionReturnValueUsed,TypeScriptValidateJSTypes
 export const key = (await crypto.subtle.generateKey(algorithm, true, [
   "sign",
